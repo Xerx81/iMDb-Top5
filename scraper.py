@@ -11,7 +11,7 @@ class Scraper:
     common_list_tag = ("li", {"class": "ipc-metadata-list-summary-item"})
     common_title_tag = ("h3", {"class": "ipc-title__text"})
     common_rating_tag = ("span", {"class": "ipc-rating-star--rating"})
-    common_year_tag = ("span", {"class": "sc-b189961a-8 hCbzGp dli-title-metadata-item"})
+    common_year_tag = ("span", {"class": "sc-300a8231-7 eaXxft dli-title-metadata-item"})
     
     # Sends a GET request to the provided URL and returns a BeautifulSoup object
     def get_soup(self, url: str) -> Optional[BeautifulSoup]:
@@ -67,7 +67,7 @@ class Scraper:
     # Fetches and returns the top movies from the provided URL
     def get_top_movies(self, url: str) -> discord.Embed:
         soup = self.get_soup(url)
-        year_tag = ("span", {"class": "sc-b189961a-8 hCbzGp cli-title-metadata-item"})  # Specific tag for year     
+        year_tag = ("span", {"class": "sc-300a8231-7 eaXxft cli-title-metadata-item"})  # Specific tag for year     
         movies = self.scrape(soup, self.common_list_tag, self.common_title_tag, self.common_rating_tag, year_tag)
         embed = discord.Embed(
             title="Top Movies",
